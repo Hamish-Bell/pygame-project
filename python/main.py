@@ -20,7 +20,6 @@ while running:
             running = False
     
     
-    
     screen.fill("white")
     
     keys = pygame.key.get_pressed()
@@ -31,6 +30,13 @@ while running:
         # cat_player_right = pygame.transform.flip(cat_player_scaled, True, False)
         if player_pos.x < WIDTH - 65:
             player_pos.x += 5
+            
+    if keys[pygame.K_UP]:
+        if player_pos.y > 0:
+            player_pos.y -= 5
+    if keys[pygame.K_DOWN]:
+        if player_pos.y < 500 - 55:
+            player_pos.y += 5
     
     screen.blit(cat_player_scaled, (player_pos.x, player_pos.y))
     
